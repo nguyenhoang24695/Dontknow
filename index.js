@@ -81,7 +81,7 @@ function handleMessage(sender_psid, received_message) {
         // Create the payload for a basic text message, which
         // will be added to the body of our request to the Send API
         response = {
-            "text": `You sent the message: "${received_message.text}". Now send me an attachment!`
+            "text": `Bạn vừa gửi tin nhắn có nội dung: "${received_message.text}". Hãy gửi cho tôi bức ảnh mà bạn cảm thấy thích thú!`
         }
     } else if (received_message.attachments) {
         // Get the URL of the message attachment
@@ -92,8 +92,8 @@ function handleMessage(sender_psid, received_message) {
                 "payload": {
                     "template_type": "generic",
                     "elements": [{
-                        "title": "Is this the right picture?",
-                        "subtitle": "Tap a button to answer.",
+                        "title": "Đây thực sự là ảnh chứ??",
+                        "subtitle": "Chọn câu trả lời.",
                         "image_url": attachment_url,
                         "buttons": [
                             {
@@ -126,9 +126,9 @@ function handlePostback(sender_psid, received_postback) {
   
     // Set the response based on the postback payload
     if (payload === 'yes') {
-      response = { "text": "Thanks!" }
+      response = { "text": "Cảm ơn!" }
     } else if (payload === 'no') {
-      response = { "text": "Oops, try sending another image." }
+      response = { "text": "Bạn vui lòng gửi hình bạn muốn nhé." }
     }
     // Send the message to acknowledge the postback
     callSendAPI(sender_psid, response);
