@@ -1,3 +1,17 @@
+// Handles messages events
+function handleMessage(sender_psid, received_message) {
+
+}
+
+// Handles messaging_postbacks events
+function handlePostback(sender_psid, received_postback) {
+
+}
+
+// Sends response messages via the Send API
+function callSendAPI(sender_psid, response) {
+
+}
 const
     express = require('express'),
     bodyParser = require('body-parser'),
@@ -63,17 +77,3 @@ app.get('/webhook', (req, res) => {
 });
 // 
 app.listen(process.env.PORT || 1337, () => console.log('webhook is listening'));
-// Handles messages events
-function handleMessage(sender_psid, received_message) {
-
-}
-
-// Handles messaging_postbacks events
-function handlePostback(sender_psid, received_postback) {
-
-}
-
-// Sends response messages via the Send API
-function callSendAPI(sender_psid, response) {
-
-}
